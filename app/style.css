@@ -1,0 +1,39 @@
+body{
+	height: 100%;
+	width: 100%;
+	font-family: serif !important;
+
+
+}
+.container-fluid{
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0px !important;
+}
+.nav{
+	
+	background: #266656;
+    background: -webkit-linear-gradient(#266656, #4d8578);
+    background: -o-linear-gradient(#266656, #4d8578); 
+    background: -moz-linear-gradient(#266656, #4d8578); 
+    background: linear-gradient(#266656, #4d8578); 
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px rgb(52, 158, 132);
+    font-family: serif;
+    font-size: xx-large;
+    right: 0;
+    left: 0;
+    margin-bottom: 20px !important;
+}
+label{
+	font-weight: normal;
+    color: #fff !important;
+    font-family: serif;
+}
