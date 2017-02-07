@@ -26,14 +26,22 @@
             <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
             	<label>Select Impojis</label>
                 <p class="lead emoji-picker-container">
-                    <input type="email" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
+                    <input type="email" id="imgId" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
                 </p>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 info-label">
             	You Can Choose Upto 10 Imojis
             </div>
+            <div class="col-md-12">
+            <button class="btn btn-primary" onclick="submit()">Submit</button>
+                
+            </div>
+            <input type="text" id="out" class="form-control">
+            <button class="btn btn-primary" id="forward" onclick="forward()"> Forward</button>
         </div>
     </div>
+
+
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Begin emoji-picker JavaScript -->
     <script src="../lib/js/nanoscroller.min.js"></script>
@@ -51,9 +59,7 @@
             assetsPath: '../lib/img/',
             popupButtonClasses: 'fa fa-smile-o'
         });
-        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        
         window.emojiPicker.discover();
     });
     </script>
