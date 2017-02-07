@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="style.css"></link>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="../lib/css/nanoscroller.css" rel="stylesheet">
+    <link href="../lib/css/emoji.css" rel="stylesheet">
 </head>
+
 <body>
-	
-	<div class="container-fluid">
-		<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 nav">
-			Imojify Your Messages
-		</div>
-		<div class="container">
-			<div class="form-group">
-			    <label  for="exampleInputEmail1">Charecter left : 0/50</label>
-			    <input type="text" class="form-control" id="message" placeholder="Type Your Message">
-		  </div>
-		</div>
-	</div>
-	
+    <div class="container-fluid">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 nav">
+            Imojify Your Messages
+        </div>
+        <div class="main-container">
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
+                <label for="exampleInputEmail1" id="msg-label">Charecter left : 0/50</label>
+                <input type="text" class="form-control" maxlength="50" id="message_in" onkeypress="validateInput(event)" placeholder="Type Your Message">
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
+            	<label>Select Impojis</label>
+                <p class="lead emoji-picker-container">
+                    <input type="email" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 info-label">
+            	You Can Choose Upto 10 Imojis
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Begin emoji-picker JavaScript -->
+    <script src="../lib/js/nanoscroller.min.js"></script>
+    <script src="../lib/js/tether.min.js"></script>
+    <script src="../lib/js/config.js"></script>
+    <script src="../lib/js/util.js"></script>
+    <script src="../lib/js/jquery.emojiarea.js"></script>
+    <script src="../lib/js/emoji-picker.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+    $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: '../lib/img/',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
+    });
+    </script>
 </body>
+
 </html>
