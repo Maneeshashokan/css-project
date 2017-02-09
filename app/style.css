@@ -60,6 +60,15 @@ body {
     font-size: x-large;
 }
 
+.generate {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    float: none !important;
+}
+
+
+
 label {
     font-weight: normal;
     color: #fff !important;

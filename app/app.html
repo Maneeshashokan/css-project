@@ -24,24 +24,27 @@
                 <input type="text" class="form-control" maxlength="50" id="message_in" onkeypress="validateInput(event)" placeholder="Type Your Message">
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
-            	<label>Select Impojis</label>
+                <label>Select Impojis</label>
                 <p class="lead emoji-picker-container">
-                    <input type="email" id="imgId" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
+                    <input  disabled="disabled" readonly contenteditable= "false" id="imgId" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
                 </p>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 info-label">
-            	You Can Choose Upto 10 Imojis
+                You Can Choose Upto 10 Imojis
             </div>
-            <div class="col-md-12">
-            <button class="btn btn-primary" onclick="submit()">Submit</button>
-                
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
+                <textarea class="form-control" id="out" rows="5" id="comment"></textarea>
             </div>
-            <input type="text" id="out" class="form-control">
-            <button class="btn btn-primary" id="forward" onclick="forward()"> Forward</button>
+            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 generate">
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <button class="btn btn-success" onclick="submit()">Generate Now</button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <button class="btn btn-primary" id="forward" onclick="forward()"> Forward</button>
+                </div>
+            </div>
         </div>
     </div>
-
-
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Begin emoji-picker JavaScript -->
     <script src="../lib/js/nanoscroller.min.js"></script>
@@ -59,7 +62,7 @@
             assetsPath: '../lib/img/',
             popupButtonClasses: 'fa fa-smile-o'
         });
-        
+
         window.emojiPicker.discover();
     });
     </script>
