@@ -25,3 +25,7 @@ var forward = function(){
 	alert(whatsapp_url);
     window.location.href = whatsapp_url;
 }
+// var prevent = function(event){
+// 	event.preventDefault();
+//     return false;
+// }

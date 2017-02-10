@@ -26,10 +26,24 @@ body {
     font-weight: bold;
     text-shadow: 1px 1px rgb(52, 158, 132);
     font-family: serif;
-    font-size: xx-large;
+    font-size: x-large;
     right: 0;
     left: 0;
     margin-bottom: 20px !important;
+}
+
+.foot{
+    background: #266656;
+    background: -webkit-linear-gradient(#266656, #4d8578);
+    background: -o-linear-gradient(#266656, #4d8578);
+    background: -moz-linear-gradient(#266656, #4d8578);
+    background: linear-gradient(#266656, #4d8578);
+    padding: 5px;
+    text-align: center;
+    font-family: serif;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 .main-container {

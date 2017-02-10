@@ -26,7 +26,7 @@
             <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 message">
                 <label>Select Impojis</label>
                 <p class="lead emoji-picker-container">
-                    <input  disabled="disabled" readonly contenteditable= "false" id="imgId" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true">
+                    <input  disabled="disabled" type="" readonly contenteditable= "false" id="imgId" class="form-control" maxlength="10" placeholder="Input field" data-emojiable="true" onkeypress="prevent(event)">
                 </p>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 info-label">
@@ -43,6 +43,9 @@
                     <button class="btn btn-primary" id="forward" onclick="forward()"> Forward</button>
                 </div>
             </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 foot">
+            Imojify Your Messages
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -64,6 +67,12 @@
         });
 
         window.emojiPicker.discover();
+       //  $('.emoji-wysiwyg-editor*').keypress(function(event) {
+       //     event.preventDefault();
+       //     return false;
+       // });
+        // $('.emoji-wysiwyg-editor*').attr('contenteditable','false');
+        $('.emoji-wysiwyg-editor*').focus();
     });
     </script>
 </body>
